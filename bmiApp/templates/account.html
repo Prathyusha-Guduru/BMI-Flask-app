@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div align='center'>
+	<h1>Welcome, {{current_user.username}}</h1>
+	<img src="/static/images/default.png" alt="" width="200">
+	<div class="container">
+		<form method="POST" action="" enctype="multipart/form-data">
+			{{form.hidden_tag()}}
+			{{form.email.label}} {{form.email}} <br>
+			{{form.username.label}} {{form.username}} <br>
+
+			{{form.weight.label}} {{form.weight}} <br>
+			{{form.height.label}} {{form.height}} <br>
+			<p>Your bmi is {{bmi}}</p>
+			{{form.submit()}}
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}
